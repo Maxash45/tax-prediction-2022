@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form action="" method="post" onsubmit="return myFunction()">
+		Income From Business/ Profession </label>: <input id="para4" type="number" step="0.1" name="para4" value="{{request.form.para4}}" required> <br><br>
+	<input type="submit" value="Submit12"> 
+	</form>
+
+<script>
+function myFunction() {
+  var b = document.getElementById("para4").value;
+  submitOK = "true";
+
+
+  if (isNaN(b) || b < 1 || b > 100000) {
+    alert("Alert");
+    submitOK = "false";
+  }
+
+  if (submitOK == "false") {
+    return false;
+  }
+}
+</script>
+
+
+</body>
+</html>

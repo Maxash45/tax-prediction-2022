@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>TAX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+<style type="text/css">
+
+ 
+ body{
+    background-image: url("/static/images/bg6.jpg");
+    background-attachment: fixed
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+  }
+  .container {
+    width: 70%;
+    margin: 0px auto;
+    
+  }
+  .login {
+    margin: 50px auto;
+    width: 350px;
+   
+    background-color:aliceblue;
+    color: black;
+  }
+  
+  .button {
+  border-radius: 12px;
+  padding: 4px 24px;
+  background-color: aliceblue; color: black;
+  border: 2px solid gray;
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1), 0 3px 10px 0 rgba(0,0,0,0.11);
+  }
+  
+ input[type=text], select {
+  width: 50%;
+  padding: 4px 20px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+input[type=password], select {
+  width: 50%;
+  padding: 4px 20px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+
+</style>
+</head>
+<body style="text-align: center;">
+ 
+<!-- Page Content -->
+<div>
+
+<div class="login">
+    
+    <br>
+    <form action="" method="post">
+      <h1 style="font-family:Copperplate">TAX prediction using Machine Learning</h1>
+      
+      <br><br><br><br>
+      Username : <input type="text" placeholder="Username" name="username" value="{{
+        request.form.username }}"></br></br>
+      Password : <input type="password" placeholder="Password" name="password" value="{{
+        request.form.password }}"></br></br>
+      <input type="submit" name="submit_button" class="button" value="       Login        "></br></br>
+    
+    {% if error %}
+      <p class="error"><strong>Error:</strong> {{ error }}
+    {% endif %}
+    </div>
+   </form>
+</body>
+</html>
